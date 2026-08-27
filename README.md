@@ -33,9 +33,9 @@ The system automatically:
 
 #### 🚀 Google Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](YOUR_GOOGLE_COLAB_LINK)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]([YOUR_GOOGLE_COLAB_LINK](https://colab.research.google.com/drive/18VegDvLUmt-iGxR9qxkgXDeeFYt-r4-z?usp=sharing))
 
-**[👉 Open `sql_agent.ipynb` in Google Colab]([YOUR_GOOGLE_COLAB_LINK](https://colab.research.google.com/drive/18VegDvLUmt-iGxR9qxkgXDeeFYt-r4-z?usp=sharing))**
+[👉 Open sql_agent.ipynb in Google Colab]([YOUR_GOOGLE_COLAB_LINK](https://colab.research.google.com/drive/18VegDvLUmt-iGxR9qxkgXDeeFYt-r4-z?usp=sharing))
 
 
 ## 🏗️ Architecture
