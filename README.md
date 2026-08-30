@@ -1,8 +1,12 @@
-# 🤖 AI-Powered E-commerce Data Analyst
+# 🤖 AI-Powered E-commerce Data Analyst & Power BI Dashboard
 
-An AI-powered e-commerce data analysis system that allows users to ask business questions in natural language. The system uses **Google Gemini** to generate SQL queries, executes them against a **Microsoft SQL Server** e-commerce database, and then uses Gemini to convert the query results into meaningful business insights.
+An end-to-end **AI-powered e-commerce analytics project** that combines **Generative AI, SQL, Python, Pandas, and Power BI** to transform business questions and transactional data into actionable insights.
 
-> **Project Status:** Working prototype in Jupyter Notebook
+The project allows users to ask business questions in **natural language**. Google Gemini generates the required SQL query, validates it, executes it against a Microsoft SQL Server e-commerce database, and then analyzes the returned data to generate meaningful **business insights and recommendations**.
+
+The project also includes an **interactive Power BI dashboard** for visualizing revenue, orders, customers, products, suppliers, and geographic performance.
+
+> **Project Status:** Working Prototype — Jupyter Notebook + Power BI Dashboard
 
 ---
 
@@ -18,80 +22,85 @@ This project provides a natural-language interface where users can ask questions
 * "Calculate monthly revenue for 2017."
 * "Calculate month-over-month revenue growth."
 * "Calculate year-over-year revenue growth."
+* "Which supplier has the highest quantity supplied?"
+* "Which products are performing the best?"
+* "Which division generated the highest revenue?"
 
 The system automatically:
 
 1. Understands the user's question
-2. Generates a SQL query
-3. Validates the SQL query
+2. Generates a SQL query using Google Gemini
+3. Validates the generated SQL
 4. Executes the query against SQL Server
-5. Converts the result into a DataFrame
-6. Sends the result to Gemini
+5. Converts the result into a Pandas DataFrame
+6. Sends the result to Gemini for analysis
 7. Generates business insights and recommendations
+8. Supports visualization and business analysis through Power BI
 
 ---
 
-#### 🚀 Google Colab
+# 🚀 Google Colab
 
-## 🚀 Run in Google Colab
+The project can be run and demonstrated directly in Google Colab.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/18VegDvLUmt-iGxR9qxkgXDeeFYt-r4-z?usp=sharing)
 
+---
 
-## 🏗️ Architecture
+# 🏗️ Project Architecture
 
 ```text
-                    User Question
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  Google Gemini  │
-                 │  SQL Generation │
-                 └────────┬────────┘
-                          │
-                          ▼
-                   Generated SQL
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  SQL Validation │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  SQL Server     │
-                 │  E-commerce DB  │
-                 └────────┬────────┘
-                          │
-                          ▼
-                      Query Data
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │     Pandas      │
-                 │    DataFrame    │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  Google Gemini  │
-                 │  Data Analysis  │
-                 └────────┬────────┘
-                          │
-                          ▼
-               Business Insights
-               & Recommendations
+                         User Question
+                               │
+                               ▼
+                      ┌─────────────────┐
+                      │  Google Gemini  │
+                      │  SQL Generation │
+                      └────────┬────────┘
+                               │
+                               ▼
+                        Generated SQL
+                               │
+                               ▼
+                      ┌─────────────────┐
+                      │  SQL Validation │
+                      └────────┬────────┘
+                               │
+                               ▼
+                      ┌─────────────────┐
+                      │ Microsoft SQL   │
+                      │     Server      │
+                      └────────┬────────┘
+                               │
+                               ▼
+                          Query Result
+                               │
+                               ▼
+                      ┌─────────────────┐
+                      │  Google Gemini  │
+                      │  Data Analysis  │
+                      └────────┬────────┘
+                               │
+                               ▼
+                    Business Insights &
+                     Recommendations
+                               │
+                               ▼
+                      ┌─────────────────┐
+                      │    Power BI     │
+                      │    Dashboard    │
+                      └─────────────────┘
 ```
 
 ---
 
-## 🚀 Key Features
+# 🚀 Key Features
 
-### Natural Language to SQL
+## 1. Natural Language to SQL
 
-Users can ask questions using normal business language instead of writing SQL manually.
+Users can ask business questions using normal language instead of writing SQL manually.
 
-Example:
+### Example
 
 ```text
 "What are the top 5 products by revenue?"
@@ -113,13 +122,17 @@ ORDER BY
     total_revenue DESC;
 ```
 
+This allows non-technical users to interact with the database using natural language.
+
 ---
 
-### SQL Validation
+# 🔐 SQL Validation
 
-The system validates generated SQL before execution.
+Since SQL is generated by an LLM, the project includes a SQL validation layer before execution.
 
-It is designed to allow analytical queries while blocking potentially destructive operations such as:
+The validation logic is designed to allow analytical queries while blocking potentially destructive SQL operations.
+
+Blocked operations include:
 
 ```text
 INSERT
@@ -136,39 +149,75 @@ This provides an additional safety layer when executing LLM-generated SQL.
 
 ---
 
-### Automated Data Analysis
+# 📊 Automated Data Analysis
 
-After SQL execution, the returned data is sent back to Gemini for analysis.
+After SQL execution, the query result is converted into a Pandas DataFrame and sent to Google Gemini for analysis.
 
-The analytical layer generates:
+The analytical layer can generate:
 
 * Key findings
-* Trends
-* Top/low performers
-* Business insights
-* Recommendations
+* Revenue trends
+* Top-performing products
+* Low-performing products
+* Supplier performance
+* Geographic performance
+* Customer-related insights
+* Growth analysis
+* Business recommendations
 * Data limitations
+
+Example workflow:
+
+```text
+Business Question
+       ↓
+Generated SQL
+       ↓
+SQL Result
+       ↓
+Pandas DataFrame
+       ↓
+Gemini Analysis
+       ↓
+Business Insights
+```
 
 ---
 
-### MoM Analysis
+# 📈 MoM Analysis
 
-The system can generate month-over-month revenue analysis.
+The system supports **Month-over-Month (MoM)** revenue analysis.
 
-Example:
+Example question:
 
 ```text
 Calculate monthly revenue for 2017
 and month-over-month revenue growth percentage.
 ```
 
-The SQL generation layer uses the `time_dim` table and SQL window functions such as `LAG()` when appropriate.
+The SQL generation layer can use SQL window functions such as `LAG()` to compare the current month's revenue with the previous month.
+
+Example:
+
+```sql
+LAG(total_revenue) OVER (
+    ORDER BY year, month
+)
+```
+
+This allows the system to calculate:
+
+```text
+Current Month Revenue
+Previous Month Revenue
+MoM Growth %
+```
 
 ---
 
-### YoY Analysis
+# 📊 YoY Analysis
 
-The system can also perform year-over-year analysis.
+The system also supports **Year-over-Year (YoY)** analysis.
 
 Example:
 
@@ -179,13 +228,180 @@ year-over-year growth percentage for 2017.
 
 The system compares the current period with the corresponding period from the previous year.
 
+This can be used to identify:
+
+* Revenue growth
+* Revenue decline
+* Seasonal trends
+* Strong-performing months
+* Weak-performing months
+
 ---
 
-## 🗄️ Database Schema
+# 📊 Power BI Dashboard
 
-The project uses an e-commerce database in Microsoft SQL Server.
+In addition to the AI-powered data analyst, I created an **interactive Power BI dashboard** to visualize and analyze the e-commerce data.
 
-### fact_table
+The dashboard provides a business-friendly visual layer on top of the analytical data.
+
+It allows users to interactively explore business performance across:
+
+* Revenue
+* Orders
+* Customers
+* Products
+* Suppliers
+* Divisions
+* Districts
+* Upazilas
+* Monthly performance
+* Yearly performance
+
+---
+
+## 📌 Power BI KPI Dashboard
+
+The dashboard includes key performance indicators such as:
+
+### 💰 Total Revenue
+
+Shows the overall revenue generated from transactions.
+
+### 🛒 Total Orders
+
+Shows the total number of unique transactions/orders.
+
+### 👥 Total Customers
+
+Shows the number of unique customers.
+
+### 💵 Average Order Value
+
+Measures the average revenue generated per order.
+
+### 📈 Revenue YoY Growth
+
+Shows the percentage change in revenue compared with the previous year.
+
+---
+
+# 📈 Power BI Visualizations
+
+The dashboard includes several interactive visualizations.
+
+### Revenue Analysis
+
+* Monthly Revenue Trend
+* Yearly Revenue
+* Revenue by Division
+* Revenue by District
+* Revenue by Upazila
+
+### Product Analysis
+
+* Top 10 Products by Revenue
+* Bottom 10 Products by Revenue
+* Product Performance
+* Revenue by Product
+
+### Supplier Analysis
+
+* Revenue by Supplier
+* Total Quantity by Supplier
+* Supplier Performance
+
+### Customer Analysis
+
+* Total Customers
+* Customer Revenue
+* Customer Distribution
+* Customer-related performance analysis
+
+---
+
+# 🔄 Interactive Top 10 / Bottom 10 Analysis
+
+The dashboard includes an interactive **Top 10 / Bottom 10 switch**.
+
+Users can switch between:
+
+```text
+┌────────────┐     ┌──────────────┐
+│   TOP 10   │  ↔  │  BOTTOM 10   │
+└────────────┘     └──────────────┘
+```
+
+The buttons use **Power BI Bookmarks and Bookmark Navigator** to switch between the two visual states.
+
+### Top 10
+
+Displays the top-performing products based on revenue.
+
+### Bottom 10
+
+Displays the lowest-performing products based on revenue.
+
+This makes product performance analysis more interactive and easier for business users.
+
+---
+
+# 🎛️ Interactive Filters
+
+The Power BI dashboard includes interactive slicers such as:
+
+* Year
+* Month
+* Division
+* District
+* Upazila
+
+Users can select a specific period or geographic location and analyze how business performance changes.
+
+For example:
+
+```text
+Year
+  ↓
+Month
+  ↓
+Revenue Trend
+  ↓
+Product Performance
+  ↓
+Supplier Performance
+  ↓
+Location Analysis
+```
+
+---
+
+# 🗺️ Geographic Analysis
+
+The dashboard allows users to analyze business performance across different geographic levels:
+
+```text
+Division
+    ↓
+District
+    ↓
+Upazila
+```
+
+This helps identify:
+
+* High-performing regions
+* Low-performing regions
+* Revenue concentration
+* Product demand by location
+* Regional opportunities
+
+---
+
+# 🗄️ Database Schema
+
+The project uses an e-commerce database stored in **Microsoft SQL Server**.
+
+## fact_table
 
 ```text
 payment_key
@@ -199,7 +415,11 @@ unit_price
 total_price
 ```
 
-### item_dim
+The fact table contains transactional information.
+
+---
+
+## item_dim
 
 ```text
 item_key
@@ -211,7 +431,11 @@ supplier
 unit
 ```
 
-### store_dim
+Contains product and supplier information.
+
+---
+
+## store_dim
 
 ```text
 store_key
@@ -220,16 +444,24 @@ district
 upzila
 ```
 
-### customer_dim
+Contains geographic/store information.
+
+---
+
+## customer_dim
 
 ```text
-coustomer_key
+customer_key
 name
 contact_no
 nid
 ```
 
-### time_dim
+Contains customer information.
+
+---
+
+## time_dim
 
 ```text
 time_key
@@ -242,7 +474,11 @@ quarter
 year
 ```
 
-### Trans_dim
+Contains time-related attributes used for trend, MoM, and YoY analysis.
+
+---
+
+## Trans_dim
 
 ```text
 payment_key
@@ -250,264 +486,168 @@ trans_type
 bank_name
 ```
 
----
-
-## 🛠️ Technology Stack
-
-| Technology           | Purpose                          |
-| -------------------- | -------------------------------- |
-| Python               | Application logic                |
-| Jupyter Notebook     | Development and demonstration    |
-| Google Gemini        | SQL generation and data analysis |
-| LangChain            | LLM integration                  |
-| Pandas               | Data processing                  |
-| SQLAlchemy           | Database connectivity            |
-| PyODBC               | SQL Server connectivity          |
-| Microsoft SQL Server | E-commerce database              |
-| Regex                | SQL cleaning and validation      |
+Contains transaction and payment information.
 
 ---
 
-## 📂 Project Structure
+# 🛠️ Technology Stack
 
-```text
-ecommerce-ai-data-analyst/
-│
-├── ecommerce_ai_agent.ipynb
-├── README.md
-├── requirements.txt
-├── config.example.py
-└── .gitignore
-```
+| Technology           | Purpose                                 |
+| -------------------- | --------------------------------------- |
+| Python               | Application logic                       |
+| Jupyter Notebook     | Development and demonstration           |
+| Google Colab         | Cloud-based development                 |
+| Google Gemini        | SQL generation and data analysis        |
+| LangChain            | LLM integration                         |
+| Pandas               | Data processing and analysis            |
+| SQLAlchemy           | Database connectivity                   |
+| PyODBC               | SQL Server connectivity                 |
+| Microsoft SQL Server | E-commerce database                     |
+| Power BI             | Interactive dashboard and visualization |
+| DAX                  | KPI and analytical calculations         |
+| Power Query          | Data transformation                     |
+| Regex                | SQL cleaning and validation             |
+
+
+
 
 ---
 
-## ⚙️ Installation
 
-Clone the repository:
+# ⚠️ Limitations
 
-```bash
-git clone https://github.com/YOUR_USERNAME/ecommerce-ai-data-analyst.git
-```
-
-Move into the project:
-
-```bash
-cd ecommerce-ai-data-analyst
-```
-
-Install the required packages:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start Jupyter:
-
-```bash
-jupyter notebook
-```
-
-Open:
-
-```text
-ecommerce_ai_agent.ipynb
-```
-
----
-
-## 🔑 Configuration
-
-The project requires a Google Gemini API key and a connection to the SQL Server database.
-
-Create a local `config.py` file:
-
-```python
-GEMINI_API_KEY = "YOUR_GEMINI_API_KEY"
-
-DB_SERVER = r"YOUR_SQL_SERVER"
-DB_NAME = "ecommerce"
-DB_DRIVER = "ODBC Driver 17 for SQL Server"
-```
-
-
-## ▶️ Example Usage
-
-After initializing the database connection and Gemini model:
-
-```python
-result = ask_data_analyst(
-    "What are the top 5 products by revenue?"
-)
-```
-
-The system returns:
-
-```python
-{
-    "sql": "...",
-    "data": [...],
-    "analysis": "..."
-}
-```
-
-You can display the generated SQL:
-
-```python
-print(result["sql"])
-```
-
-Display the data:
-
-```python
-display(pd.DataFrame(result["data"]))
-```
-
-Display the AI-generated analysis:
-
-```python
-print(result["analysis"])
-```
-
----
-
-## 📊 Example Output
-
-### User Question
-
-```text
-What are the top 5 products by revenue?
-```
-
-### Result
-
-```text
-Red Bull 12oz
-1,305,700
-
-K Cups Daily Chef Columbian Supremo
-1,245,394
-
-K Cups Original Donut Shop Med. Roast
-1,188,843
-
-K Cups Dunkin Donuts Medium Roast
-1,109,760
-
-K Cups Folgers Lively Columbian
-1,042,406
-```
-
-### AI Analysis
-
-The system identifies the highest-performing products, revenue distribution, performance differences, and provides data-supported recommendations.
-
----
-
-## 🔍 Example Business Questions
-
-The system can answer questions such as:
-
-```text
-What is the total revenue?
-
-What are the top 5 products by revenue?
-
-What are the bottom 5 products by revenue?
-
-What is revenue by division?
-
-Which division generated the highest revenue?
-
-Calculate monthly revenue for 2017.
-
-Calculate month-over-month revenue growth.
-
-Calculate year-over-year revenue growth.
-
-Which products generate the most revenue in each division?
-
-What are the highest and lowest performing products?
-```
-
----
-
-## 🔐 Security Considerations
-
-Because the project executes SQL generated by an LLM, SQL validation is included before database execution.
-
-The project also follows these principles:
-
-* Only analytical SQL should be executed.
-* Destructive SQL commands are blocked.
-* API keys should be stored outside the public repository.
-* Database credentials should never be committed to GitHub.
-* Generated SQL should be reviewed during development.
-
----
-
-## ⚠️ Limitations
-
-This is currently a **Jupyter-based prototype**.
+This project is currently a **working prototype**.
 
 Current limitations include:
 
-* Requires a local SQL Server database.
+* Requires a SQL Server database.
 * Requires a Gemini API key.
 * SQL generation depends on the LLM.
 * Complex analytical questions may require prompt refinement.
 * The system currently focuses on the defined e-commerce schema.
-* No public deployment is included in the current version.
+* Power BI dashboard data refresh is not currently fully automated.
+* No public production deployment is included in the current version.
+* LLM-generated SQL should always be validated before production execution.
 
 ---
 
-## 🔮 Future Improvements
+# 🔮 Future Improvements
 
 Planned improvements include:
 
 * FastAPI REST API
-* Interactive web interface
+* Interactive web application
+* Automated Power BI data refresh
 * Advanced SQL validation
 * Query history
-* Visualization generation
+* Automatic visualization generation
 * Automatic chart recommendations
-* More advanced statistical analysis
+* Advanced statistical analysis
 * Conversational memory
-* Authentication
+* Authentication and authorization
 * Cloud database integration
-* Production deployment
+* Azure/AWS/GCP deployment
+* Production-grade monitoring
+* Automated data pipelines
+* Role-based access control
 
 ---
 
-## 🎯 Learning Outcomes
+# 🎯 Learning Outcomes
 
 This project demonstrates practical experience with:
 
-* SQL
-* Python
-* SQL Server
-* Pandas
-* Database connectivity
-* LangChain
-* Large Language Models
-* Natural Language to SQL
-* SQL validation
-* Data analysis
+### Data Analytics
+
+* Exploratory data analysis
+* Business KPI development
+* Revenue analysis
+* Product analysis
+* Supplier analysis
+* Geographic analysis
+
+### SQL
+
+* Joins
+* Aggregations
+* GROUP BY
+* ORDER BY
+* Window functions
+* `LAG()`
 * MoM analysis
 * YoY analysis
-* Business intelligence
-* AI-assisted analytics
+* Analytical queries
+
+### Python
+
+* Pandas
+* Data processing
+* Database connectivity
+* API/LLM integration
+* Automation
+
+### Generative AI
+
+* Natural Language to SQL
+* Prompt engineering
+* LLM-based data analysis
+* AI-generated business insights
+* SQL validation
+
+### Power BI
+
+* Dashboard development
+* DAX measures
+* KPI cards
+* Interactive slicers
+* Bookmarks
+* Bookmark Navigator
+* Top/Bottom N analysis
+* Time-series analysis
+* Geographic analysis
+* Interactive business reporting
 
 ---
 
-## 👨‍💻 Author
+
+
+---
+
+# 👨‍💻 Author
 
 **Tushar Upadhyay**
 
-Data Analyst | Python | SQL | Power BI | Data Science | Generative AI
+Data Analyst | SQL | Python | Power BI | Data Science | Generative AI
 
 ---
 
-## ⭐ Project Goal
+# ⭐ Project Goal
 
-The goal of this project is to demonstrate how **Generative AI can be integrated with traditional data analytics workflows** to allow business users to interact with structured data using natural language.
+The goal of this project is to demonstrate how **Generative AI can be integrated with traditional data analytics and business intelligence workflows**.
+
+The project combines:
+
+```text
+        SQL Server
+            │
+            ▼
+          Python
+            │
+            ▼
+      Google Gemini
+            │
+            ▼
+     Natural Language
+       → SQL Analysis
+            │
+            ▼
+     Business Insights
+            │
+            ▼
+        Power BI
+            │
+            ▼
+ Interactive Dashboard
+```
+
+The overall objective is to create an **end-to-end AI-assisted analytics solution** where users can ask business questions in natural language, retrieve data from a relational database, generate automated insights, and explore the results through an interactive Power BI dashboard.
