@@ -370,8 +370,12 @@ SELECT
 FROM yoy_calculation
 ORDER BY upzila, year;
 ```
-
 📁 [`View YoY SQL`](SQL/04_upzila_yoy_growth.sql)
+
+### 📊 YoY Revenue Growth Analysis
+
+![YoY Revenue Growth Analysis](screenshot/Screenshot%20\(214\).png)
+
 
 ---
 
