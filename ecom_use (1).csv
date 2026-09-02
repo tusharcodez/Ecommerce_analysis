@@ -1,0 +1,8 @@
+upzila,customers,one_time_customers,low_frequency_customers,medium_frequency_customers,high_frequency_customers,avg_customer_lifetime_days
+Dhaka,9191,0,0,0,9191,2437.97
+Chittagong,9191,0,1,78,9112,2308.04
+Rajshahi,9191,2,121,2615,6453,2151.09
+Khulna,9191,0,221,3295,5675,2123.1
+Rangpur,9186,7,1200,5605,2374,1978.82
+Barisal,9187,30,1902,5743,1512,1907.16
+Sylhet,9166,188,4429,4255,294,1668.83
