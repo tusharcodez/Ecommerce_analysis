@@ -1,13 +1,13 @@
-## 💡 Business Insights & Recommendations
+💡 Business Insights & Recommendations
 
-### 📍 Sylhet Upzila Underperformance Analysis
+ 📍 Sylhet Upzila Underperformance Analysis
 
-**Key Finding:**
-Sylhet is the **lowest-performing Upzila**, generating approximately **₹55.12 lakh in revenue**, which is **51.27% below the median Upzila revenue benchmark**.
+Key Finding:
+Sylhet is the lowest-performing Upzila generating approximately **₹55.12 lakh in revenue**, which is 51.27% below the median Upzila revenue benchmark
 
 The analysis indicates that the underperformance is **not primarily driven by customer-base size, transaction value, product mix, or individual store performance**. The major issue is **low customer engagement, weak retention, and low purchase frequency**.
 
-### 🔎 Key Insights
+🔎 Key Insights
 
 | Metric                           |      Sylhet | Benchmark / Observation       |
 | -------------------------------- | ----------: | ----------------------------- |
@@ -20,9 +20,9 @@ The analysis indicates that the underperformance is **not primarily driven by cu
 | Customers Inactive 180+ Days     |      66.45% | High inactivity               |
 | Estimated Revenue Opportunity    | ₹57.69 lakh | Potential upside              |
 
-### 🎯 Root Cause
+ 🎯 Root Cause
 
-The analysis points to **customer engagement and retention as the primary root cause**.
+The analysis points to **customer engagement and retention as the primary root cause
 
 * Customer base size is not the major issue.
 * Revenue per transaction is broadly consistent with other regions.
@@ -32,19 +32,18 @@ The analysis points to **customer engagement and retention as the primary root c
 * A large proportion of customers have been inactive for more than 180 days.
 * Repeat-purchase frequency is also low.
 
-**Conclusion:**
+Conclusion:
 
-> **Sylhet's underperformance is primarily a customer retention and purchase-frequency problem rather than a customer acquisition, product mix, or store performance problem.**
+> **Sylhet's underperformance is primarily a customer retention and purchase-frequency problem rather than a customer acquisition, product mix, or store performance problem.
 
 ---
-
-## 💰 Quantified Revenue Opportunity
+ 💰 Quantified Revenue Opportunity
 
 Sylhet currently generates approximately **₹55.12 lakh**.
 
 If revenue per customer increases from **₹601.38 to the median benchmark of ₹1,230.73**, estimated revenue could reach approximately:
 
-**₹112.81 lakh**
+112.81 lakh
 
 This represents a potential revenue opportunity of approximately:
 
@@ -54,13 +53,13 @@ This is a **potential opportunity, not guaranteed revenue**, because achieving t
 
 ---
 
-## 📌 Recommendations
+ 📌 Recommendations
 
-### 1. 🔄 Reactivate Inactive Customers — Highest Priority
+ 1. 🔄 Reactivate Inactive Customers — Highest Priority
 
-Target the approximately **6,089 customers who have been inactive for more than 180 days**.
+Target the approximately **6,089 customers who have been inactive for more than 180 days
 
-**Recommended actions:**
+Recommended actions:
 
 * Personalized reactivation offers
 * Limited-time discounts
@@ -72,11 +71,11 @@ Target the approximately **6,089 customers who have been inactive for more than 
 
 ---
 
-### 2. 🛒 Increase Repeat Purchase Frequency
+ 2. 🛒 Increase Repeat Purchase Frequency
 
-A significant proportion of customers fall within the **2–10 transaction range**.
+A significant proportion of customers fall within the **2–10 transaction range
 
-**Recommended actions:**
+Recommended actions:
 
 * Loyalty and reward programs
 * Repeat-purchase discounts
@@ -84,19 +83,19 @@ A significant proportion of customers fall within the **2–10 transaction range
 * Subscription/replenishment reminders
 * Personalized product recommendations
 
-**Goal:** Move customers from low/medium-frequency segments toward higher purchase frequency.
+Goal Move customers from low/medium-frequency segments toward higher purchase frequency.
 
 ---
 
-### 3. ⭐ Target High-Value At-Risk Customers
+ 3. ⭐ Target High-Value At-Risk Customers
 
 Identify customers who historically generated high revenue but have not purchased recently.
 
-Prioritize these customers because **reactivating an existing high-value customer may generate greater value than acquiring a new low-value customer**.
+Prioritize these customers because **reactivating an existing high-value customer may generate greater value than acquiring a new low-value customer
 
 ---
 
-### 4. 📅 Improve Customer Recency
+ 4. 📅 Improve Customer Recency
 
 Segment customers based on purchase recency:
 
@@ -109,7 +108,7 @@ Use automated, segment-specific campaigns to progressively re-engage customers b
 
 ---
 
-### 5. 🏪 Continue Store-Level Benchmarking
+ 5. 🏪 Continue Store-Level Benchmarking
 
 Although no single store appears to be the primary cause of Sylhet's underperformance, store-level monitoring should continue.
 
@@ -123,41 +122,25 @@ Track:
 
 This can help identify emerging local performance issues.
 
+--
 ---
 
-## 📊 Recommended Power BI KPIs
-
-| KPI                       | Business Purpose             |
-| ------------------------- | ---------------------------- |
-| Revenue                   | Measure overall performance  |
-| Revenue vs Benchmark      | Identify performance gap     |
-| Revenue per Customer      | Measure customer value       |
-| Transactions per Customer | Measure purchase frequency   |
-| Active Customers 30D      | Measure customer engagement  |
-| Inactive Customers 180D+  | Measure retention risk       |
-| Repeat Customer %         | Measure customer loyalty     |
-| Revenue Opportunity       | Quantify potential upside    |
-| Revenue by Store          | Monitor local performance    |
-| Revenue by Product        | Monitor product contribution |
-
----
-
-## 📈 Expected Business Impact
+ 📈 Expected Business Impact
 
 The recommended strategy shifts the focus from simply **acquiring more customers** toward **increasing the value and frequency of existing customers**.
 
-### Recommended Action Flow
+ Recommended Action Flow
 
-**Reactivate inactive customers**
+Reactivate inactive customers
 ⬇️
-**Increase repeat purchases**
+Increase repeat purchases
 ⬇️
-**Improve customer purchase frequency**
+**Improve customer purchase frequency
 ⬇️
-**Increase revenue per customer**
+Increase revenue per customer
 ⬇️
-**Close the benchmark gap**
+Close the benchmark gap
 
-### 🎯 Strategic Takeaway
+ 🎯 Strategic Takeaway
 
-**The biggest opportunity in Sylhet is not acquiring more customers — it is getting existing customers to purchase more frequently and remain engaged.**
+The biggest opportunity in Sylhet is not acquiring more customers — it is getting existing customers to purchase more frequently and remain engaged.
