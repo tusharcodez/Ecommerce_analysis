@@ -12,7 +12,7 @@ The project focuses on **revenue analysis, customer behavior, transaction freque
 
  ### 🔗 Databricks SQL Query
 
-[View SQL Query in Databricks](https://dbc-41c04ce0-5cc4.cloud.databricks.com/editor/queries/3847591861351702?o=7474655575965593)
+[View SQL Query in Databricks]([https://dbc-41c04ce0-5cc4.cloud.databricks.com/editor/queries/3847591861351702?o=7474655575965593](https://dbc-41c04ce0-5cc4.cloud.databricks.com/editor/queries/3847591861351702?o=7474655575965593))
 
 
 
