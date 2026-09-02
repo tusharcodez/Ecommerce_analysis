@@ -322,7 +322,6 @@ The project uses Databricks SQL for analytical processing.
 * Geographic aggregation
 * YoY analysis
 
-📁 **SQL Queries:** [`SQL/`](SQL/)
 
 ---
 
@@ -370,14 +369,9 @@ SELECT
 FROM yoy_calculation
 ORDER BY upzila, year;
 ```
-📁 [`View YoY SQL`](SQL/04_upzila_yoy_growth.sql)
-
-### 📊 YoY Revenue Growth Analysis
-
-![YoY Revenue Growth Analysis](screenshot/Screenshot%20\(214\).png)
 
 
----
+
 
 # 📍 Geographic Performance Analysis
 
@@ -432,9 +426,6 @@ This enables identification of:
 * Retention opportunities
 * Reactivation opportunities
 
-📁 [`Customer Frequency SQL`](SQL/02_customer_frequency.sql)
-
-📁 [`Customer Recency SQL`](SQL/03_customer_recency.sql)
 
 ---
 
@@ -719,28 +710,6 @@ Interactive filters include:
 * GitHub
 
 ---
-
-
-# 📂 Project Files
-
-### SQL
-
-* [`Revenue Analysis`](SQL/01_revenue_analysis.sql)
-* [`Customer Frequency`](SQL/02_customer_frequency.sql)
-* [`Customer Recency`](SQL/03_customer_recency.sql)
-* [`Upzila YoY Growth`](SQL/04_upzila_yoy_growth.sql)
-* [`Product Analysis`](SQL/05_product_analysis.sql)
-* [`Payment Analysis`](SQL/06_payment_analysis.sql)
-* [`Sylhet RCA`](SQL/07_sylhet_rca.sql)
-
-### Results
-
-* [`YoY Growth Results`](Results/upzila_yoy_growth.xlsx)
-* [`Customer Frequency Results`](Results/customer_frequency.xlsx)
-* [`Customer Recency Results`](Results/customer_recency.xlsx)
-* [`Sylhet RCA Results`](Results/sylhet_rca.xlsx)
-
-
 
 # ⚠️ Limitations
 
